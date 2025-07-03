@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login page</title>
+  <link rel="stylesheet" href="style.css">
+  
+  
+</head>
+<body>
+<br>
+<br>
+<form method="post" action="login.php">
+    <div class="cont">
+        <div>
+            <label for="blood_test">Blood Test:</label>
+            
+            <table>
+                <tr>
+                    <td>
+                        Test Name
+                    </td>
+                    <td>
+                        Abbreviation
+                    </td>
+                    <td>
+                        Units
+                    </td>
+                    <td>
+                        Typical Reference Range
+                    </td>
+                    <td>
+                        Test Category
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <select name="btest" id="btest" onclick="choice()">
+                 <option value="White Blood Cell Count">White Blood Cell Count</option>
+                 <option value="Red Blood Cell Count">Red Blood Cell Count</option>
+                 <option value="Hemoglobin">Hemoglobin</option>
+                 <option value="Hematocrit">Hematocrit</option>
+                 <option value="Mean Corpuscular Volume">Mean Corpuscular Volume</option>
+                 <option value="Mean Corpuscular Hemoglobin">Mean Corpuscular Hemoglobin</option>
+                 <option value="Mean Corpuscular Hemoglobin Concentration">Mean Corpuscular Hemoglobin Concentration</option>
+                 <option value="Red Cell Distribution Width">Red Cell Distribution Width</option>
+                 <option value="Platelet Count">Platelet Count</option>
+                 <option value="Mean Platelet Volume">Mean Platelet Volume</option>
+                 <option value="Neutrophils (Absolute)">Neutrophils (Absolute)</option>
+                 <option value="Lymphocytes (Absolute)">Lymphocytes (Absolute)</option>
+                 <option value="Monocytes (Absolute)">Monocytes (Absolute)</option>
+                 <option value="Eosinophils (Absolute)">Eosinophils (Absolute)</option>
+                 <option value="Basophils (Absolute)">Basophils (Absolute)</option>
+                 <option value="Glucose">Glucose</option>
+                 <option value="Blood Urea Nitrogen">Blood Urea Nitrogen</option>
+                 <option value="Creatinine">Creatinine</option>
+                 <option value="BUN/Creatinine Ratio">BUN/Creatinine Ratio</option>
+                 <option value="Sodium">Sodium</option>
+                 <option value="Potassium">Potassium</option>
+                 <option value="Chloride">Chloride</option>
+                 <option value="Carbon Dioxide (Bicarbonate)">Carbon Dioxide (Bicarbonate)</option>
+                 <option value="Calcium">Calcium</option>
+                 <option value="Total Protein">Total Protein</option>
+                 <option value="Albumin">Albumin</option>
+                 <option value="Globulin">Globulin</option>
+                 <option value="Albumin/Globulin Ratio">Albumin/Globulin Ratio</option>
+                 <option value="Total Bilirubin">Total Bilirubin</option>
+                 <option value="Alkaline Phosphatase">Alkaline Phosphatase</option>
+                 <option value="Alanine Aminotransferase">Alanine Aminotransferase</option>
+                 <option value="Aspartate Aminotransferase">Aspartate Aminotransferase</option>
+                 <option value="Lipid Panel - Total Cholesterol">Lipid Panel - Total Cholesterol</option>
+                 <option value="Lipid Panel - HDL Cholesterol">Lipid Panel - HDL Cholesterol</option>
+                 <option value="Lipid Panel - LDL Cholesterol">Lipid Panel - LDL Cholesterol</option>
+                 <option value="Lipid Panel - Triglycerides">Lipid Panel - Triglycerides</option>
+                 <option value="Thyroid Stimulating Hormone">Thyroid Stimulating Hormone</option>
+                 <option value="Free T4">Free T4</option>
+                 <option value="Hemoglobin A1C">Hemoglobin A1C</option>
+                 <option value="Prothrombin Time">Prothrombin Time</option>
+                 <option value="International Normalized Ratio">International Normalized Ratio</option>
+                 <option value="Partial Thromboplastin Time">Partial Thromboplastin Time</option>
+                 <option value="C-Reactive Protein">C-Reactive Protein</option>
+                 <option value="Erythrocyte Sedimentation Rate">Erythrocyte Sedimentation Rate</option>
+                 <option value="Iron">Iron</option>
+                 <option value="Ferritin">Ferritin</option>
+                 <option value="Vitamin B12">Vitamin B12</option>
+                 <option value="Folate">Folate</option>
+
+            </select>
+                    </td>
+                    <td id="abbrv">
+                       
+                    </td>
+                    <td id="units">
+                        
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+    <script>
+        function choice(){
+            const name=document.getElementById("btest").value
+
+            switch(name){
+                case "White Blood Cell Count":document.getElementById("abbrv").innerHTML="WBC";document.getElementById("units").innerHTML="x10^3/ÂµL";break;
+                case "Red Blood Cell Count":document.getElementById("abbrv").innerHTML="RBC";document.getElementById("units").innerHTML="x10^6/ÂµL";break;
+            }
+        }
+
+
+    </script>
+</form>
+    
+
+<footer>
+  <p></p>
+</footer>
+
+</body>
+</html>
