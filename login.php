@@ -2,7 +2,7 @@
 session_start();
 
 // Database credentials
-
+//test
 if(isset($_POST['login'])){
    
 $host = 'localhost';
