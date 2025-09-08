@@ -1,0 +1,80 @@
+:root {
+    --bg: #0b1116;
+    --panel: #121a22;
+    --panel-2: #0f161d;
+    --text: #e6eef5;
+    --muted: #9fb3c8;
+    --accent: #34b3ff;
+    --accent-2: #7dd3fc;
+    --danger: #ff6b6b;
+    --success: #34d399;
+    --border: #1f2a35;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.app-shell {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 16px;
+}
+
+.sidebar-header { display: flex; flex-direction: column; gap: 12px; }
+.sidebar h1 { font-size: 18px; margin: 0; }
+.search {
+    border: 1px solid var(--border);
+    background: var(--panel-2);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 100%;
+}
+.patient-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.patient-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel-2); }
+.patient-item .name { font-weight: 600; }
+.patient-item .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.select-btn { background: var(--accent); color: #05121a; border: none; padding: 8px 10px; border-radius: 8px; cursor: pointer; font-weight: 700; }
+.select-btn:hover { filter: brightness(1.05); }
+
+.main { padding: 24px; }
+.selected-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.selected-summary h2 { margin: 0 0 6px; font-size: 22px; }
+.pii { color: var(--muted); }
+.timer { text-align: right; }
+.timer-label { color: var(--muted); font-size: 12px; }
+.timer-display { font-size: 28px; font-weight: 700; color: var(--accent-2); }
+
+.forms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.card h3 { margin: 0 0 12px; font-size: 16px; }
+.card form { display: flex; gap: 8px; }
+.card input[type="text"] { flex: 1; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); padding: 10px 12px; border-radius: 8px; }
+.card button { background: var(--accent); color: #05121a; border: none; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; }
+.items { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.items li { background: var(--panel-2); border: 1px solid var(--border); padding: 10px 12px; border-radius: 8px; }
+
+.previous-visits { margin-top: 28px; }
+.visits { display: grid; gap: 12px; }
+.visit { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.visit .header { display: flex; justify-content: space-between; }
+.visit .meta { color: var(--muted); font-size: 12px; }
+
+@media (max-width: 980px) {
+    .app-shell { grid-template-columns: 1fr; }
+    .sidebar { position: sticky; top: 0; z-index: 2; }
+    .forms { grid-template-columns: 1fr; }
+}
+
