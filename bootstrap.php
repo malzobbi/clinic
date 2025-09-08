@@ -36,7 +36,7 @@ function initialize_database(SQLite3 $db): void {
             phone TEXT,
             email TEXT,
             address TEXT,
-            created_at INTEGER DEFAULT (strftime("%s", "now"))
+            created_at INTEGER NOT NULL
         )'
     );
 
@@ -99,7 +99,7 @@ function seed_initial_data(SQLite3 $db): void {
         ['Olivia', 'Miller', '1988-09-30', 'Female', '555-1005', 'olivia.m@example.com', '654 Birch Ln'],
     ];
 
-    $stmt = $db->prepare('INSERT INTO patients (first_name, last_name, dob, gender, phone, email, address) VALUES (:fn, :ln, :dob, :gender, :phone, :email, :address)');
+    $stmt = $db->prepare('INSERT INTO patients (first_name, last_name, dob, gender, phone, email, address, created_at) VALUES (:fn, :ln, :dob, :gender, :phone, :email, :address, :created_at)');
     foreach ($examplePatients as $p) {
         $stmt->bindValue(':fn', $p[0], SQLITE3_TEXT);
         $stmt->bindValue(':ln', $p[1], SQLITE3_TEXT);
@@ -108,6 +108,7 @@ function seed_initial_data(SQLite3 $db): void {
         $stmt->bindValue(':phone', $p[4], SQLITE3_TEXT);
         $stmt->bindValue(':email', $p[5], SQLITE3_TEXT);
         $stmt->bindValue(':address', $p[6], SQLITE3_TEXT);
+        $stmt->bindValue(':created_at', now(), SQLITE3_INTEGER);
         $stmt->execute();
     }
 }
